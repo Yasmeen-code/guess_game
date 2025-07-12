@@ -67,7 +67,7 @@ input[type="number"]:focus {
     inset -1px -1px 5px rgba(255, 255, 255, 0.3);
 }
 
-button {
+.btn {
   width: 80%;
   height: 45px;
   background: #6f73ff;

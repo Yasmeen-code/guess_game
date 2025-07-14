@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guess'])) {
   $_SESSION['attempts']++;
 
   if ($guess < $_SESSION['number']) {
-    $message = "Try a higher number!";
+    $message = "📉 Try a higher number!";
   } elseif ($guess > $_SESSION['number']) {
-    $message = "Try a lower number!";
+    $message = "📈 Try a lower number!";
   } else {
-    $message = "Correct! The number was {$guess}. You guessed it in {$_SESSION['attempts']} attempts.";
+    $message = "🎉 Correct! The number was {$guess}. You guessed it in {$_SESSION['attempts']} attempts.";
 
     $stmt = $pdo->prepare("INSERT INTO scores (attempts, user_id) VALUES (:attempts, :user_id)");
     $stmt->execute([
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guess'])) {
 <body>
 
   <div class="game-container">
-    <h1>Guess The Number Game</h1>
+    <h1>🎯 Guess The Number</h1>
     <p>Enter a number between <strong>1 and 100</strong></p>
 
     <form method="post">
@@ -95,18 +95,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guess'])) {
 
     <form method="post">
       <input type="hidden" name="reset" value="1">
-      <button type="submit" class="btn">Restart Game</button>
+      <button type="submit" class="btn">🔄 Restart Game</button>
     </form>
 
     <div class="message">
       <?php if (!empty($message)) echo "<p>$message</p>"; ?>
     </div>
     <div style="text-align: center; margin-top: 20px;">
-      <a href="profile.php" class="small-btn">View Profile</a>
+      <a href="profile.php" class="small-btn">👤 View Profile</a>
 
       <form method="post" style="display: inline;">
         <input type="hidden" name="logout" value="1">
-        <button  class="small-btn">Logout</button>
+        <button  class="small-btn">🚪 Logout</button>
       </form>
     </div>
   </div>

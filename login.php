@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <div class="game-container">
-        <h2>Login</h2>
+        <h2>🔐 Login</h2>
         <form method="post">
             <div class="input-box">
                 <input type="text" name="username" placeholder="Username" required>

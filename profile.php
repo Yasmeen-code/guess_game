@@ -80,7 +80,7 @@ $scores = $stmt->fetchAll();
 <body>
 
     <div class="game-container">
-        <h2>👤 Welcome, <?= htmlspecialchars($name) ?></h2>
+        <h2>Welcome, <?= htmlspecialchars($name) ?></h2>
         <p>Your game history:</p>
 
         <?php if (count($scores) > 0): ?>
@@ -107,7 +107,7 @@ $scores = $stmt->fetchAll();
 
             <form method="post">
                 <input type="hidden" name="logout" value="1">
-                <button type="submit" class="small-btn">🚪 Logout</button>
+                <button type="submit" class="small-btn">Logout</button>
             </form>
         </div>
     </div>
